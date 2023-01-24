@@ -1,0 +1,113 @@
+@import "variables";
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: $light-color;
+  background: $dark-color;
+
+  .container {
+    padding: .5em 1em;
+  }
+
+  .card {
+    border: 1px solid $light-color;
+    border-radius: .15em;
+
+    .title {
+      text-align: center;
+      padding: .5em 1em;
+      border-bottom: 1px solid $light-color;
+    }
+
+    .body {
+      padding: 1em;
+    }
+  }
+
+  .col-md-1 {
+    width: calc(100% / 12 * 1);
+  }
+
+  .col-md-2 {
+    width: calc(100% / 12 * 2);
+  }
+
+  .col-md-3 {
+    width: calc(100% / 12 * 3);
+  }
+
+  .col-md-4 {
+    width: calc(100% / 12 * 4);
+  }
+
+  .col-md-5 {
+    width: calc(100% / 12 * 5);
+  }
+
+  .col-md-6 {
+    width: calc(100% / 12 * 6);
+  }
+
+  .col-md-7 {
+    width: calc(100% / 12 * 7);
+  }
+
+  .col-md-8 {
+    width: calc(100% / 12 * 8);
+  }
+
+  .col-md-9 {
+    width: calc(100% / 12 * 9);
+  }
+
+  .col-md-10 {
+    width: calc(100% / 12 * 10);
+  }
+
+  .col-md-11 {
+    width: calc(100% / 12 * 11);
+  }
+
+  .col-md-12 {
+    width: calc(100% / 12 * 12);
+  }
+
+  a {
+    text-decoration: none;
+    color: $light-color;
+
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      color: $neutral-color;
+    }
+  }
+
+  .align-center{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .col-md-1,
+  .col-md-2,
+  .col-md-3,
+  .col-md-4,
+  .col-md-5,
+  .col-md-6,
+  .col-md-7,
+  .col-md-8,
+  .col-md-9,
+  .col-md-10,
+  .col-md-11,
+  .col-md-12 {
+    width: 100% !important;
+  }
+}

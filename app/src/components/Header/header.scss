@@ -1,0 +1,12 @@
+@import "../../variables";
+#header {
+  padding: 1em;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  background: $deep-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  ul{
+    list-style: none;
+  }
+}
