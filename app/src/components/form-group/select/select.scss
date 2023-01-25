@@ -1,0 +1,58 @@
+@import "src/variables";
+
+#select {
+  position: relative;
+  cursor: pointer;
+
+  &:focus {
+    border: 1px solid $neutral-color;
+  }
+
+  .options {
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: calc(100% + .5em);
+    background: $deep-color;
+    width: 100%;
+    border: 1px solid /*$color-light*/$light-color;
+    border-radius: 3px;
+    z-index: 999;
+
+    //noinspection CssUnusedSymbol
+    &.show {
+      display: block;
+      backdrop-filter: blur(150px);
+
+    }
+
+    //.search-option {
+    //  padding: .5em .5em;
+    //  list-style: none;
+    //  cursor: pointer;
+    //  input{
+    //    width: 100%;
+    //    height: 100%;
+    //    padding: .25em .5em;
+    //  }
+    //}
+
+    .option {
+      padding: .5em .5em;
+      list-style: none;
+      cursor: pointer;
+
+
+      &.active {
+        background: /*$color-medium-d*/$neutral-color-d;
+      }
+
+      //noinspection CssUnusedSymbol
+      &:hover, &.highlighted {
+        background: /*$color-medium*/$neutral-color-d;
+      }
+    }
+  }
+}

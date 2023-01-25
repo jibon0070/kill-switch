@@ -1,8 +1,13 @@
 import Config from "../config";
 import jwtDecode from "jwt-decode";
+import Http from "../http";
+import Observable from "../Observable";
 
 export default class UsersService {
-    private static get token(): string | null {
+    private static url: string = Config.api + '/users';
+    static $is_logged_in = new Observable();
+
+    static get token(): string | null {
         return localStorage.getItem(Config.token);
     }
 
@@ -22,4 +27,17 @@ export default class UsersService {
         return payload.role;
     }
 
+    static logout() {
+        localStorage.clear();
+    }
+
+    static register(value: { [p: string]: any }) {
+        return Http.post<{ success: boolean, token: string, error: string; input_error: { name: string; message: string; }; }>(this.url + '/register', value);
+    }
+
+    static login(value: { [p: string]: any }) {
+        return Http.post<{
+            error: string;
+            success: boolean; token: string; input_error: { name: string; message: string; }; }>(this.url + '/login', value);
+    }
 }

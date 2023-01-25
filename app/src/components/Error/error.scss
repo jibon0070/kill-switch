@@ -1,0 +1,38 @@
+#error {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  backdrop-filter: blur(15px);
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    .card {
+      .body {
+        .content {
+          //chang scroll bar design
+          &::-webkit-scrollbar {
+            width: 5px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 1em;
+            cursor: pointer;
+          }
+          &::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            border-radius: 1em;
+          }
+          max-height: 200px;
+          overflow-y: auto;
+          padding-bottom: .75em;
+        }
+      }
+    }
+
+  }
+}
