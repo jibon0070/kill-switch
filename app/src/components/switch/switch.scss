@@ -1,0 +1,36 @@
+.switch {
+  label {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input:checked + .slider {
+      background: green;
+      justify-content: flex-end;
+    }
+
+    .slider {
+      width: 3em;
+      height: 1.5em;
+      border-radius: 3em;
+      background: red;
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: .1em;
+
+      .slide {
+        background: white;
+        height: 100%;
+        aspect-ratio: 1/1;
+        display: inline-block;
+        border-radius: 50%;
+      }
+    }
+
+    input {
+      display: none;
+    }
+  }
+}

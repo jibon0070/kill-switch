@@ -14,7 +14,7 @@ app.use("/api", require("./routes/routes"));
 mongoose.set("strictQuery", false);
 mongoose.connect(process.env.MONGO_URI!);
 
-let port = process.env.PORT || 5000;
+let port = process.env.PORT || 8000;
 app.listen(port, () => {
     console.log(`server running in http://localhost:${port}/api`);
 });

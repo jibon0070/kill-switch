@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {FormControl} from "../../Form/ReactFormGroup";
+import {FormControl} from "../ReactFormGroup";
 import './select.scss';
 
 type props_type = {

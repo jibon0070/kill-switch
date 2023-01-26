@@ -1,5 +1,14 @@
-let mongoose = require("mongoose");
-let schema = mongoose.Schema({
+import {Document, model, Schema} from "mongoose";
+
+export interface UserModelType extends Document{
+    username: string;
+    full_name: string;
+    email: string;
+    password: string;
+    role: string;
+    created_at: number;
+}
+const users_schema = new Schema<UserModelType>({
     username: {
         type: String,
         required: true,
@@ -27,4 +36,4 @@ let schema = mongoose.Schema({
         required: true
     }
 });
-module.exports = mongoose.model("users", schema);
+module.exports = model<UserModelType>("users", users_schema);

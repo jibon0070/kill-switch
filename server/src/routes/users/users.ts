@@ -1,7 +1,9 @@
-const jwt = require('jsonwebtoken');
-let bcrypt = require("bcrypt");
+import {UserModelType} from "../../models/user.model";
 import {Response} from "express";
 import {CRequest} from "../../types/CRequest";
+
+const jwt = require('jsonwebtoken');
+let bcrypt = require("bcrypt");
 
 const router = require('express').Router();
 const UserModel = require("../../models/user.model");
@@ -56,7 +58,7 @@ router.post("/register", async (req: CRequest, res: Response) => {
     });
 
     //check for unique username
-    let user: any;
+    let user: UserModelType;
     try {
         user = await UserModel.findOne({username: username});
     }
@@ -107,7 +109,7 @@ router.post('/login', async (req: CRequest, res: Response) => {
     if (!username) return res.json({input_error: {name: "username", message: "Username is required."}});
     if (!password) return res.json({input_error: {name: "password", message: "Password is required."}});
 
-    let user: any;
+    let user: UserModelType;
     try {
         user = await UserModel.findOne({$or: [{username: username}, {email: username}]});
     }
@@ -135,7 +137,7 @@ router.post("/uniq", async (req: CRequest, res: Response) => {
     const {value, field} = req.body;
     const filter: { [key: string]: any } = {};
     filter[field] = value;
-    let user: any;
+    let user: UserModelType;
     try {
         user = await UserModel.findOne(filter);
     }

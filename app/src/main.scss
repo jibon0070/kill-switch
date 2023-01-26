@@ -174,6 +174,11 @@ body {
     transition: $transition;
   }
 
+  .circle {
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+  }
+
   .bg-primary {
     background: $deep-color;
 
@@ -187,6 +192,14 @@ body {
 
     &:hover {
       background: $neutral-color-d;
+    }
+  }
+
+  .bg-warn {
+    background: tomato;
+
+    &:hover {
+      background: #da4830;
     }
   }
 
